@@ -144,6 +144,7 @@ export default function CheckoutPage() {
 
   return (
     <div
+      className="checkout-wrap"
       style={{
         maxWidth: '1200px',
         margin: '0 auto',
@@ -165,13 +166,13 @@ export default function CheckoutPage() {
       </h1>
 
       <div
+        className="checkout-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 420px',
           gap: '80px',
           alignItems: 'start',
         }}
-        className="flex flex-col md:grid"
       >
         {/* Form */}
         <form onSubmit={handleSubmit}>
@@ -340,6 +341,7 @@ export default function CheckoutPage() {
 
         {/* Summary */}
         <div
+          className="checkout-summary"
           style={{
             borderTop: '0.5px solid #E5E5E5',
             paddingTop: '0',

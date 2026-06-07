@@ -40,6 +40,7 @@ export default function CartDrawer() {
       {/* Drawer */}
       <div
         ref={drawerRef}
+        className="cart-drawer"
         style={{
           position: 'fixed',
           right: 0,

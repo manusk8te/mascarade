@@ -150,6 +150,7 @@ export default function ProductPage() {
     >
       {/* Breadcrumb */}
       <div
+        className="product-breadcrumb"
         style={{
           padding: '16px 40px',
           borderBottom: '0.5px solid #E5E5E5',
@@ -201,6 +202,7 @@ export default function ProductPage() {
           }}
         >
           <div
+            className="product-image-sticky"
             style={{
               position: 'sticky',
               top: '56px',
@@ -255,6 +257,7 @@ export default function ProductPage() {
 
         {/* Right - Info */}
         <div
+          className="product-info-panel"
           style={{
             padding: '48px 48px',
             display: 'flex',

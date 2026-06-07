@@ -97,7 +97,7 @@ export default function Navbar() {
             </button>
 
             {menuOpen && (
-              <div style={{
+              <div className="nav-dropdown" style={{
                 position: 'absolute', top: 'calc(100% + 12px)', right: 0,
                 backgroundColor: '#FFFFFF', border: '0.5px solid #E5E5E5',
                 width: '260px', zIndex: 100, boxShadow: '0 4px 24px rgba(0,0,0,0.06)',

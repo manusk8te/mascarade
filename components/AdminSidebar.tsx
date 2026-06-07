@@ -20,6 +20,7 @@ export default function AdminSidebar() {
 
   return (
     <aside
+      className="admin-sidebar"
       style={{
         width: '200px',
         minHeight: '100vh',
@@ -32,6 +33,7 @@ export default function AdminSidebar() {
     >
       {/* Brand */}
       <div
+        className="admin-sidebar-brand"
         style={{
           padding: '24px 20px',
           borderBottom: '0.5px solid #E5E5E5',
@@ -67,7 +69,7 @@ export default function AdminSidebar() {
       </div>
 
       {/* Navigation */}
-      <nav style={{ flex: 1, padding: '20px 0' }}>
+      <nav className="admin-sidebar-nav" style={{ flex: 1, padding: '20px 0' }}>
         {navItems.map((item) => {
           const isActive = pathname.startsWith(item.href)
           return (
@@ -95,7 +97,7 @@ export default function AdminSidebar() {
       </nav>
 
       {/* Logout */}
-      <div style={{ padding: '20px', borderTop: '0.5px solid #E5E5E5' }}>
+      <div className="admin-sidebar-logout" style={{ padding: '20px', borderTop: '0.5px solid #E5E5E5' }}>
         <button
           onClick={handleLogout}
           style={{
