@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
   await supabaseAdmin.storage.createBucket('product-photos', { public: true }).catch(() => {})
 
   const buffer = Buffer.from(await file.arrayBuffer())
-  const { data, error } = await supabaseAdmin.storage
+  const { error } = await supabaseAdmin.storage
     .from('product-photos')
     .upload(filename, buffer, { upsert: true, contentType: file.type })
 

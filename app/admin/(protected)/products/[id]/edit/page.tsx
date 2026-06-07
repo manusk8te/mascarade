@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useRouter } from 'next/navigation'
-import { supabase } from '@/lib/supabase'
 import { CATEGORIES, type Category } from '@/lib/constants'
 import type { Product, ProductVariant } from '@/lib/types'
 import Link from 'next/link'
