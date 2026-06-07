@@ -1,0 +1,10 @@
+import AdminSidebar from '@/components/AdminSidebar'
+
+export default function ProtectedLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#FFFFFF' }}>
+      <AdminSidebar />
+      <div style={{ flex: 1, overflow: 'auto' }}>{children}</div>
+    </div>
+  )
+}
