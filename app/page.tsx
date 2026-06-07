@@ -141,21 +141,18 @@ export default async function HomePage({
             )}
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', borderTop: '0.5px solid #E5E5E5', borderLeft: '0.5px solid #E5E5E5' }}
             className="md:grid-cols-3 lg:grid-cols-4">
-            {products.map((product, index) => {
+            {products.map((product) => {
               const variants = product.product_variants || []
               const primaryVariant = variants.find((v) => v.position === 0) || variants[0] || null
-              const cols = 4
-              const isLastRow = index >= products.length - (products.length % cols || cols)
-              const isLastInRow = (index + 1) % cols === 0
 
               return (
                 <div key={product.id} style={{
-                  borderRight: isLastInRow ? 'none' : '0.5px solid #E5E5E5',
-                  borderBottom: isLastRow ? 'none' : '0.5px solid #E5E5E5',
+                  borderRight: '0.5px solid #E5E5E5',
+                  borderBottom: '0.5px solid #E5E5E5',
                 }}>
-                  <div style={{ padding: '16px' }}>
+                  <div style={{ padding: '12px' }}>
                     <ProductCard product={product} variant={primaryVariant} />
                   </div>
                 </div>

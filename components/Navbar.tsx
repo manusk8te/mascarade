@@ -78,8 +78,8 @@ export default function Navbar() {
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
 
-          {/* Account button */}
-          <div style={{ position: 'relative' }} ref={menuRef}>
+          {/* Account button — caché sur mobile */}
+          <div className="nav-admin-btn" style={{ position: 'relative' }} ref={menuRef}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0', color: '#000' }}
