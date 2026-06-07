@@ -54,6 +54,12 @@ export default async function HomePage({
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         overflow: 'hidden', backgroundColor: '#000',
       }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/hero.jpg" alt="" aria-hidden style={{
+          position: 'absolute', inset: 0, width: '100%', height: '100%',
+          objectFit: 'cover', objectPosition: 'center',
+          filter: 'brightness(0.55)',
+        }} />
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '0 20px' }}>
           <p className="hero-title" style={{
             fontFamily: 'system-ui, sans-serif', fontWeight: 300,
