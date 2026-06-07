@@ -64,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav links (cachés sur mobile) */}
-        <div style={{ display: 'flex', gap: '28px', alignItems: 'center' }} className="hidden md:flex">
+        <div className="hidden md:flex" style={{ gap: '28px', alignItems: 'center' }}>
           {NAV_CATEGORIES.map(cat => (
             <Link key={cat} href={`/?category=${encodeURIComponent(cat)}`}
               style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 300, fontSize: '0.65rem', letterSpacing: '0.15em', color: '#000', textDecoration: 'none', textTransform: 'uppercase' }}>
@@ -76,7 +76,7 @@ export default function Navbar() {
         {/* Droite : admin (desktop) + panier */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
 
-          {/* Admin — caché sur mobile */}
+          {/* Admin — desktop seulement */}
           <div className="hidden md:block" style={{ position: 'relative' }} ref={menuRef}>
             <button onClick={() => setMenuOpen(!menuOpen)}
               style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '5px', padding: '4px 0', color: '#000' }}>
@@ -152,7 +152,7 @@ export default function Navbar() {
       </div>
 
       {/* ── Barre catégories mobile (sous le logo) ── */}
-      <div className="md:hidden" style={{ borderTop: '0.5px solid #E5E5E5', overflowX: 'auto', display: 'flex', scrollbarWidth: 'none' }}>
+      <div className="flex md:hidden" style={{ borderTop: '0.5px solid #E5E5E5', overflowX: 'auto', scrollbarWidth: 'none' }}>
         <Link href="/" style={{ padding: '10px 14px', whiteSpace: 'nowrap', textDecoration: 'none', fontFamily: 'system-ui', fontWeight: 300, fontSize: '0.6rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#999', flexShrink: 0 }}>
           Tout
         </Link>
