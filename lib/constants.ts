@@ -1,18 +1,11 @@
 export const CATEGORIES = [
-  'Vénitien',
-  'Loup',
-  'Colombine',
-  'Bauta',
-  'Papillon',
-  'Intégral',
-  'Demi-visage',
-  'Plumes',
-  'Arlequin',
-  'Baroque',
-  'Fantôme',
-  'Floral',
-  'Métallique',
-  'Minimaliste',
+  'Venetian Filigree / Laser-Cut Metal',
+  'Roman / Gladiator Style',
+  'Classic Colombina',
+  'Full-Face / Volto',
+  'Feathered / Decorated',
+  'Bauta-Inspired / Phantom Style',
+  'Laurel / Warrior Crown',
 ] as const
 
 export type Category = (typeof CATEGORIES)[number]
