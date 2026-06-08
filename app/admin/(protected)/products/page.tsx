@@ -6,6 +6,7 @@ import type { Product } from '@/lib/types'
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
+  const [deleting, setDeleting] = useState<string | null>(null)
 
   useEffect(() => {
     fetch('/api/admin/products')
@@ -13,6 +14,14 @@ export default function AdminProductsPage() {
       .then(data => { setProducts(Array.isArray(data) ? data : []); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])
+
+  const handleDelete = async (product: Product) => {
+    if (!confirm(`Supprimer « ${product.name} » ? Cette action est irréversible.`)) return
+    setDeleting(product.id)
+    await fetch(`/api/admin/products/${product.id}`, { method: 'DELETE' })
+    setProducts(prev => prev.filter(p => p.id !== product.id))
+    setDeleting(null)
+  }
 
   return (
     <div style={{ padding: '40px' }}>
@@ -55,10 +64,17 @@ export default function AdminProductsPage() {
                     {product.is_published ? 'Publié' : 'Brouillon'}
                   </span>
                 </td>
-                <td style={{ padding: '16px', textAlign: 'right' }}>
+                <td style={{ padding: '16px', textAlign: 'right', display: 'flex', gap: '20px', justifyContent: 'flex-end', alignItems: 'center' }}>
                   <Link href={`/admin/products/${product.id}/edit`} style={{ fontFamily: 'system-ui, sans-serif', fontWeight: 300, fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#000', textDecoration: 'none', borderBottom: '0.5px solid #000' }}>
                     Modifier
                   </Link>
+                  <button
+                    onClick={() => handleDelete(product)}
+                    disabled={deleting === product.id}
+                    style={{ background: 'none', border: 'none', cursor: deleting === product.id ? 'wait' : 'pointer', fontFamily: 'system-ui, sans-serif', fontWeight: 300, fontSize: '0.6rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#CC0000', padding: 0 }}
+                  >
+                    {deleting === product.id ? '…' : 'Supprimer'}
+                  </button>
                 </td>
               </tr>
             ))}
