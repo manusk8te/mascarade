@@ -305,7 +305,7 @@ export default function ProductPage() {
                 margin: 0,
               }}
             >
-              {Number(product.price).toFixed(2)} €
+              {Number(product.price).toLocaleString('fr-FR')} F CFA
             </p>
           </div>
 
@@ -516,7 +516,7 @@ export default function ProductPage() {
                 margin: 0,
               }}
             >
-              Livraison gratuite dès 100€ · Retours sous 14 jours
+              Livraison gratuite · Retours sous 14 jours
             </p>
           </div>
         </div>

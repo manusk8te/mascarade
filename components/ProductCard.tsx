@@ -101,7 +101,7 @@ export default function ProductCard({ product, variant }: ProductCardProps) {
               margin: 0,
             }}
           >
-            {Number(product.price).toFixed(2)} €
+            {Number(product.price).toLocaleString('fr-FR')} F CFA
           </p>
         </div>
       </div>

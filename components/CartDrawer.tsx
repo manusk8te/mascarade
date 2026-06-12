@@ -284,7 +284,7 @@ export default function CartDrawer() {
                           margin: 0,
                         }}
                       >
-                        {(item.price * item.quantity).toFixed(2)} €
+                        {(item.price * item.quantity).toLocaleString('fr-FR')} F CFA
                       </p>
                     </div>
                   </div>
@@ -356,7 +356,7 @@ export default function CartDrawer() {
                   color: '#000',
                 }}
               >
-                {cartTotal.toFixed(2)} €
+                {cartTotal.toLocaleString('fr-FR')} F CFA
               </span>
             </div>
             <Link

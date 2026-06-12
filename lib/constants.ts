@@ -1,11 +1,11 @@
 export const CATEGORIES = [
-  'Venetian Filigree / Laser-Cut Metal',
-  'Roman / Gladiator Style',
-  'Classic Colombina',
-  'Full-Face / Volto',
-  'Feathered / Decorated',
-  'Bauta-Inspired / Phantom Style',
-  'Laurel / Warrior Crown',
+  'Vénitien Filigrane',
+  'Romain / Gladiateur',
+  'Colombine Classique',
+  'Visage Complet / Volto',
+  'Plumes & Joyaux',
+  'Bauta / Fantôme',
+  'Couronne de Laurier',
 ] as const
 
 export type Category = (typeof CATEGORIES)[number]

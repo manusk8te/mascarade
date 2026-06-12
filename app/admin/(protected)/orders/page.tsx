@@ -163,7 +163,7 @@ export default async function AdminOrdersPage() {
                       color: '#000',
                     }}
                   >
-                    {Number(order.total).toFixed(2)} €
+                    {Number(order.total).toLocaleString('fr-FR')} F CFA
                   </td>
                   <td style={{ padding: '16px', textAlign: 'right' }}>
                     <Link

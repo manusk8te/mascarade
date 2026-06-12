@@ -423,7 +423,7 @@ export default function CheckoutPage() {
                     flexShrink: 0,
                   }}
                 >
-                  {(item.price * item.quantity).toFixed(2)} €
+                  {(item.price * item.quantity).toLocaleString('fr-FR')} F CFA
                 </span>
               </li>
             ))}
@@ -455,7 +455,7 @@ export default function CheckoutPage() {
                   color: '#000',
                 }}
               >
-                {cartTotal.toFixed(2)} €
+                {cartTotal.toLocaleString('fr-FR')} F CFA
               </span>
             </div>
             <div
@@ -514,7 +514,7 @@ export default function CheckoutPage() {
                   color: '#000',
                 }}
               >
-                {cartTotal.toFixed(2)} €
+                {cartTotal.toLocaleString('fr-FR')} F CFA
               </span>
             </div>
           </div>

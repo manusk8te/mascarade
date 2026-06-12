@@ -185,7 +185,7 @@ export default async function HomePage({
             fontFamily: 'system-ui, sans-serif', fontWeight: 300,
             fontSize: '0.6rem', letterSpacing: '0.1em', color: '#999',
           }}>
-            Livraison offerte dès 80€
+            Livraison offerte
           </span>
         </div>
       </footer>
